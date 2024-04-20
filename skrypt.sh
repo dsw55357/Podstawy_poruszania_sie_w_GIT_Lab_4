@@ -25,6 +25,20 @@ function logs
     fi
 }
 
+function help
+{
+  echo "Skrypt: $0"
+  echo "Opcje:"
+  echo "  --date    Wyświetla dzisiejszą datę."
+  echo "  --logs    Skrypt utworzy automatycznie 100 plików logx.txt (x – numer pliku od 1 – 100)"
+  echo "               ale 'skrypt.sh -l 30' utworzenie automatycznie 30 plików"
+  echo "               w każdym pliku wpisze jego nazwę, nazwę skryptu, który go utworzył i datę."
+  echo "  --help    Wyświetla wszystkie dostępne opcje"
+  # Dodaj tutaj opcje i ich opisy
+  echo "Przykład użycia:"
+  echo "  ./skrypt.sh --opcja1 argument1"
+}
+
 
 function menu
 {
@@ -32,6 +46,7 @@ function menu
     case $1 in
 	--date) date ;;
 	--logs) logs $@ ;;
+	--help | -h) help $@ ;;
 	*) help
     esac
 }

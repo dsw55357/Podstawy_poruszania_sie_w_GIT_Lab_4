@@ -46,7 +46,7 @@ function menu
     case $1 in
 	--date) date ;;
 	--logs) logs $@ ;;
-	--help | -h) help $@ ;;
+	--help) help $@ ;;
 	*) help
     esac
 }
